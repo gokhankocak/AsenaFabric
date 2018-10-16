@@ -1,0 +1,27 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+OrdererOrgs:
+  - Name: Orderer
+    Domain: asena.fab
+    CA:
+        Country: TR
+        Province: Turkey
+        Locality: Ankara
+    Specs:
+      - Hostname: orderer
+
+PeerOrgs:
+  - Name: Org1
+    Domain: asena.fab
+    EnableNodeOUs: true
+    CA:
+        Country: TR
+        Province: Turkey
+        Locality: Istanbul
+    Specs:
+      - Hostname: peer
+    Users:
+      Count: 1

@@ -20,22 +20,27 @@ export PEER_CONN_PARAMS="--peerAddresses peer.asena.fab:7051 --tlsRootCertFiles 
 
 cd $FABRIC_CFG_PATH
 
+echo "Downloading statsd go client"
 go get github.com/cactus/go-statsd-client/statsd
 
 # install chaincode
+echo "Installing Asena Smart Contract"
 peer chaincode install -n $CHAINCODE -v ${VERSION} -l ${LANGUAGE} -p ${CC_SRC_PATH}
 sleep 10
 peer chaincode list --installed
 
 # instantiate chaincode
+echo "Instantiating Asena Smart Contract"
 peer chaincode instantiate -o $ORDERER --tls --cafile $ORDERER_CA -C $CHANNEL -n $CHAINCODE -l ${LANGUAGE} -v ${VERSION} -c '{"Args":["Init"]}'
 sleep 10
 peer chaincode list -C $CHANNEL --instantiated
 
 # invoke chaincode
+echo "Invoking Asena Smart Contract"
 peer chaincode invoke -o $ORDERER --tls --cafile $ORDERER_CA -C $CHANNEL -n $CHAINCODE $PEER_CONN_PARAMS -c '{"Args":["InitLedger"]}'
 sleep 10
 
 # query chaincode
+echo "Querying Asena Smart Contract"
 peer chaincode query -C $CHANNEL -n $CHAINCODE -c '{"Args":["GetState","AsenaSmartContract.Status"]}'
 peer chaincode query -C $CHANNEL -n $CHAINCODE -c '{"Args":["GetState","AsenaSmartContract.Version"]}'

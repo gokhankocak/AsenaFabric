@@ -12,6 +12,7 @@ export BINARY_URL=https://nexus.hyperledger.org/content/repositories/releases/or
 mkdir tmp
 
 # download the Hyperledger Fabric binary files
+echo "Downloading Hyperledger fabric binaries"
 curl -f -s -C - ${BINARY_URL} -o ${BINARY_FILE}
 mv ${BINARY_FILE} tmp
 cd tmp
@@ -33,10 +34,12 @@ rm -rf data/*
 mkdir data
 
 # generate crypto files
+echo "Generating Public Keys, Private Keys and Certificates"
 cryptogen generate --config=./crypto.yaml
 mv crypto-config crypto
 
 # generate artifacts
+echo "Generating Asena Channel artifacts"
 mkdir artifacts
 configtxgen -profile AsenaGenesis -outputBlock ./artifacts/genesis.block
 configtxgen -profile AsenaChannel -outputCreateChannelTx ./artifacts/channel.tx -channelID $CHANNEL
@@ -45,9 +48,3 @@ configtxgen -profile AsenaChannel -outputAnchorPeersUpdate ./artifacts/Org1MSPan
 # display blockchain objects
 configtxgen -inspectBlock ./artifacts/genesis.block
 configtxgen -inspectChannelCreateTx ./artifacts/channel.tx
-
-# bring up the Asena Fabric containers
-export COMPOSE_PROJECT_NAME=asena
-export NETWORK_BASE_NAME=fabric
-
-docker-compose -f docker-asena-fabric.yaml up

@@ -1,0 +1,38 @@
+[
+    {
+        "DocType": "CustomerData",
+        "ID": "123456",
+        "FirstName": "Ahmet",
+        "LastName": "Batmaz",
+        "City": "Istanbul",
+        "State": "Istanbul",
+        "Country": "Turkey"
+    },
+    {
+        "DocType": "CustomerData",
+        "ID": "123457",
+        "FirstName": "Ayşe",
+        "LastName": "Tankut",
+        "City": "Ankara",
+        "State": "Ankara",
+        "Country": "Turkey"
+    },
+    {
+        "DocType": "CustomerData",
+        "ID": "123458",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "City": "Dallas City",
+        "State": "Dallas",
+        "Country": "US"
+    },
+    {
+        "DocType": "CustomerData",
+        "ID": "123459",
+        "FirstName": "Marry",
+        "LastName": "Lee",
+        "City": "Los Angeles",
+        "State": "California",
+        "Country": "US"
+    }
+]

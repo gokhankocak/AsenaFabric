@@ -8,4 +8,4 @@
 export COMPOSE_PROJECT_NAME=asena
 export NETWORK_BASE_NAME=fabric
 
-docker-compose -f docker-asena-fabric.yaml start
+docker-compose -f docker-asena-fabric.yaml up

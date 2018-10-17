@@ -33,6 +33,9 @@ peer chaincode list --installed
 echo "Instantiating Asena Smart Contract"
 peer chaincode instantiate -o $ORDERER --tls --cafile $ORDERER_CA -C $CHANNEL -n $CHAINCODE -l ${LANGUAGE} -v ${VERSION} -c '{"Args":["Init"]}'
 sleep 10
+# sometimes it timeouts, so issue the instantiate command again
+peer chaincode instantiate -o $ORDERER --tls --cafile $ORDERER_CA -C $CHANNEL -n $CHAINCODE -l ${LANGUAGE} -v ${VERSION} -c '{"Args":["Init"]}'
+sleep 10
 peer chaincode list -C $CHANNEL --instantiated
 
 # invoke chaincode

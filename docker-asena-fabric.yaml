@@ -123,7 +123,7 @@ services:
       - ./config/couchdb/couchdb.asena.fab/default.ini:/opt/couchdb/etc/default.ini
       - ./config/couchdb/couchdb.asena.fab/local.ini:/opt/couchdb/etc/local.ini
       - ./config/couchdb/couchdb.asena.fab/vm.args:/opt/couchdb/etc/vm.args
-      - ./data/couchdb/couchdb.asena.fab:/data
+      - ./data/couchdb/couchdb.asena.fab:/opt/couchdb/data
     ports:
       - 5984:5984
     networks:

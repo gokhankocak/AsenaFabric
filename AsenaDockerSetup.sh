@@ -13,6 +13,7 @@ docker-compose --version
 docker run hello-world
 
 # pull Docker images
+echo "Pulling Docker images for Hyperledger Fabric"
 docker pull hyperledger/fabric-baseos:amd64-0.4.10
 docker pull hyperledger/fabric-baseimage:amd64-0.4.10
 docker pull hyperledger/fabric-peer:1.2.0
@@ -22,6 +23,9 @@ docker pull hyperledger/fabric-tools:1.2.0
 docker pull hyperledger/fabric-couchdb:0.4.10
 
 # pull SDKs and other libraries for development
+echo "Downloading Hyperledger Fabric SDKs"
 git clone https://github.com/hyperledger/fabric-sdk-node.git
 git clone https://github.com/hyperledger/fabric-sdk-java.git
 git clone https://github.com/hyperledger/fabric-samples.git 
+
+echo "Now you can run ./AsenaFabricSetup.sh to continue"

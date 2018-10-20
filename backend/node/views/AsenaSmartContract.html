@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AsenaSmartContract</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="description" content="AsenaSmartContract">
+  <meta name="keywords" content="asena,asenafabric>"
+</head>
+<style>
+#customers {
+  font-family: "Play", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+<body>
+  <article>
+    <h2>AsenaSmartContract</h2>
+    <table id="customers">
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+        <th>Status</th>
+        <th>Message</th>
+      </tr>
+      {% for r in result %}
+      <tr>
+        <td>{{r.Key}}</td>
+        <td>{{r.Value}}</td>
+        <td>{{r.Status}}</td>
+        <td>{{r.Message}}</td>
+      </tr>
+      {% endfor %}
+    </article>
+  </body>
+  </html>

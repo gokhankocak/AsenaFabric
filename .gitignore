@@ -13,3 +13,12 @@
 
 # Mac OSX
 .DS_Store
+
+# directories to ignore
+tmp/*
+bin/*
+artifacts/*
+data/*
+crypto/*
+backend/go/Backend
+backend/node/node_modules/*

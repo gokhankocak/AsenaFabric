@@ -138,10 +138,10 @@ services:
       - FABRIC_CA_SERVER_CA_NAME=ca-asena
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.asena.fabric-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/65c32c280a9ee8e18eb8b99aa4c9843b1637c548f6b43aeec675601e3d0534f3_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/SED_FABRIC_CA_SERVER_TLS_KEYFILE
     ports:
       - 7054:7054
-    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.asena.fabric-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/65c32c280a9ee8e18eb8b99aa4c9843b1637c548f6b43aeec675601e3d0534f3_sk -b admin:adminpw -d'
+    command: sh -c 'fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.asena.fabric-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/SED_FABRIC_CA_SERVER_TLS_KEYFILE -b admin:adminpw -d'
     volumes:
       - ./crypto/peerOrganizations/asena.fabric/ca:/etc/hyperledger/fabric-ca-server-config
     networks:

@@ -107,6 +107,8 @@ func InsertCustomerData(cli *channel.Client) {
 			fmt.Println("InsertCustomerData(): client.Execute(PutState) failed:", err.Error())
 			return
 		}
+
+		fmt.Println(d)
 	}
 }
 
@@ -116,7 +118,7 @@ func main() {
 	var err error
 	var cdr []CouchDbResponse
 
-	configProvider := config.FromFile("network-config.yaml")
+	configProvider := config.FromFile("../network-config.yaml")
 	sdk, err := fabsdk.New(configProvider)
 	if err != nil {
 		fmt.Println("fabsdk.New() failed:", err.Error())
@@ -145,6 +147,7 @@ func main() {
 	Resp, err := cli.Query(channel.Request{ChaincodeID: "asenacc", Fcn: "GetVersion", Args: [][]byte{nil}})
 	if err != nil {
 		fmt.Println("client.Query(GetVersion) failed:", err.Error())
+		return
 	} else {
 		fmt.Println("GetVersion", Resp.ChaincodeStatus, string(Resp.Payload))
 	}
@@ -156,8 +159,6 @@ func main() {
 	} else {
 		fmt.Println("GetStats", Resp.ChaincodeStatus, string(Resp.Payload))
 	}
-
-	InsertCustomerData(cli)
 
 	// GetHistory of a key
 	Resp, err = cli.Query(channel.Request{ChaincodeID: "asenacc", Fcn: "GetHistory", Args: [][]byte{[]byte("AsenaSmartContract.Version")}})
@@ -176,6 +177,8 @@ func main() {
 			fmt.Println(m.Timestamp, string(m.Value))
 		}
 	}
+
+	InsertCustomerData(cli)
 
 	// Make a rich query
 	Resp, err = cli.Query(channel.Request{ChaincodeID: "asenacc", Fcn: "GetQueryResult", Args: [][]byte{[]byte(`{"selector": { "Country": { "$eq": "Turkey" } }}`)}})

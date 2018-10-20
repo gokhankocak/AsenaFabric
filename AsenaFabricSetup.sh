@@ -51,5 +51,11 @@ configtxgen -profile AsenaChannel -outputAnchorPeersUpdate ./artifacts/Org1MSPan
 configtxgen -inspectBlock ./artifacts/genesis.block
 configtxgen -inspectChannelCreateTx ./artifacts/channel.tx
 
+CA_KEYFILE=`find ./crypto/peerOrganizations/asena.fabric/ca -name '*_sk' | cut -c 44-`
+cat template-docker-asena-fabric.yaml | sed "s/SED_FABRIC_CA_SERVER_TLS_KEYFILE/$CA_KEYFILE/g" >docker-asena-fabric.yaml
+
+ORG1_ADMIN_KEYFILE=`find ./crypto/peerOrganizations/asena.fabric/users/Admin@asena.fabric/msp/keystore -name '*_sk' | cut -c 79-`
+cat backend/template-network-config.yaml | sed "s/SED_ORG1_ADMIN_KEYFILE/$ORG1_ADMIN_KEYFILE/g" >backend/network-config.yaml
+
 echo "Now you can run ./AsenaFabricStart.sh"
 echo "After then, open another terminal window and run ./AsenaFabricInit.sh"

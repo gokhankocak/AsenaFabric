@@ -48,12 +48,16 @@ We had proposed a solution to share data between Vodafone Turkey, Turkish Teleko
 | Operating Systems | Linux, Windows, Mac OSX |
 
 ## AsenaFabric Installation
-- git clone https://github.com/gokhankocak/AsenaFabric.git
-- run ./AsenaDockerInstall.sh to install Docker CE and some necessary tools
-- run ./AsenaDockerSetup.sh to install docker-compose and pull docker images
-- run ./AsenaFabricSetup.sh to create fabric configuration
-- run ./AsenaFabricStart.sh to start the fabric components
-- run ./AsenaFabricInit.sh in a separate window to install Asena Smart Contract
-- cd backend/go and run go build Backend.go then run ./Backend to insert some data into blockchain
-- cd backend/node and run node . to start the backend server
-- open a browser and connect to http://localhost:3000/AsenaSmartContract and http://localhost:3000/GetCustomerData
+| Action | Description |
+|--------|-------------|
+| Download AsenaFabric | git clone https://github.com/gokhankocak/AsenaFabric.git |
+| AsenaDockerInstall.sh | installs Docker CE and some necessary tools |
+| AsenaDockerSetup.sh | installs Docker Compose and pulls docker images |
+| AsenaFabricSetup.sh | creates the AsenaFabric configuration files |
+| AsenaFabricStart.sh | starts AsenaFabric containers |
+| AsenaFabricInit.sh | installs Asena Smart Contract |
+| backend/go | run go build Backend.go and then ./Backend to load some sample data to AsenaFabric |
+| backend/node | run node . to start the backend NodeJS server |
+| Open a browser | connect to http://localhost:3000/AsenaSmartContract to display info |
+| Open a browser | connect to http://localhost:3000/GetCustomerData to view sample data loaded by backend/go/Backend.go |
+

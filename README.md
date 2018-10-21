@@ -5,7 +5,8 @@ We had proposed a solution to share data between Vodafone Turkey, Turkish Teleko
 - a built-in general-purpose **Smart Contract**
 - an easy to setup **Hyperledger Fabric** environment
 - a modular and scalable architecture that meets **enterprise** needs
-- a platform that can run on your **datacenter** or on **AWS, Azure, Google, etc** cloud services
+- can run on Linux, Windows, Mac OSX
+- can be hosted in your **datacenter** or on **AWS, Azure, Google** cloud
 - a complete solution with **performance and log management**
 
 **AsenaFabric** is a turnkey blockchain platform for the enterprise. It’s based on Hyperledger Fabric which is built by Linux Foundation.
@@ -36,3 +37,5 @@ We had proposed a solution to share data between Vodafone Turkey, Turkish Teleko
 - It improves developer productivity
 - It can run on your datacenter or on a cloud
 - It reduces IT infrastructure costs
+## AsenaFabric Installation
+- git clone https://github.com/gokhankocak/AsenaFabric

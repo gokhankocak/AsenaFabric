@@ -37,6 +37,16 @@ We had proposed a solution to share data between Vodafone Turkey, Turkish Teleko
 - It improves developer productivity
 - It can run on your datacenter or on a cloud
 - It reduces IT infrastructure costs
+## AsenaFabric General Architecture
+| Component | Description |
+|-----------|-------------|
+| Your App  | Uses NodeJS or Java SDK for Hyperledger Fabric |
+| Asena Smart Contract | A general-purpose Smart Contract for Enterprise needs |
+| Asena Fabric | Automates setup, provides log and performance management |
+| Datastore | Blockchain and CouchDB |
+| Docker | Provides containers |
+| Operating Systems | Linux, Windows, Mac OSX |
+
 ## AsenaFabric Installation
 - git clone https://github.com/gokhankocak/AsenaFabric.git
 - run ./AsenaDockerInstall.sh to install Docker CE and some necessary tools

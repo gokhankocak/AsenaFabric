@@ -38,4 +38,12 @@ We had proposed a solution to share data between Vodafone Turkey, Turkish Teleko
 - It can run on your datacenter or on a cloud
 - It reduces IT infrastructure costs
 ## AsenaFabric Installation
-- git clone https://github.com/gokhankocak/AsenaFabric
+- git clone https://github.com/gokhankocak/AsenaFabric.git
+- run ./AsenaDockerInstall.sh to install Docker CE and some necessary tools
+- run ./AsenaDockerSetup.sh to install docker-compose and pull docker images
+- run ./AsenaFabricSetup.sh to create fabric configuration
+- run ./AsenaFabricStart.sh to start the fabric components
+- run ./AsenaFabricInit.sh in a separate window to install Asena Smart Contract
+- cd backend/go and run go build Backend.go then run ./Backend to insert some data into blockchain
+- cd backend/node and run node . to start the backend server
+- open a browser and connect to http://localhost:3000/AsenaSmartContract and http://localhost:3000/GetCustomerData

@@ -18,7 +18,7 @@ services:
 
   orderer.asena.fabric:
     container_name: orderer.asena.fabric
-    image: hyperledger/fabric-orderer:1.2.0
+    image: hyperledger/fabric-orderer:latest
     environment:
       - FABRIC_CFG_PATH=/etc/hyperledger/fabric
       - ORDERER_GENERAL_VM_ENDPOINT=unix:///host/var/run/docker.sock
@@ -37,7 +37,7 @@ services:
       - fabric
 
   peer0.asena.fabric:
-    image: hyperledger/fabric-peer:1.2.0
+    image: hyperledger/fabric-peer:latest
     container_name: peer0.asena.fabric
     environment:
       - FABRIC_CFG_PATH=/etc/hyperledger/fabric
@@ -79,7 +79,7 @@ services:
 
   cli.asena.fabric:
     container_name: cli.asena.fabric
-    image: hyperledger/fabric-tools:1.2.0
+    image: hyperledger/fabric-tools:latest
     tty: true
     stdin_open: true
     environment:
@@ -132,7 +132,7 @@ services:
 
   ca.asena.fabric:
     container_name: ca.asena.fabric
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:latest
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca-asena

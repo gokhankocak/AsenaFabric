@@ -21,8 +21,9 @@ sleep 5
 
 # install Go
 echo "Installing Go"
-wget https://dl.google.com/go/go1.11.1.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.11.1.linux-amd64.tar.gz
+wget https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.11.5.linux-amd64.tar.gz
+rm go1.11.5.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 echo "Please add /usr/local/go/bin to your PATH in your shell profile"
 

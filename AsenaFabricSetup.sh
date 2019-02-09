@@ -6,8 +6,8 @@
 
 # locate the binary files for the current architecture
 export ARCH=$(echo "$(uname -s|tr '[:upper:]' '[:lower:]'|sed 's/mingw64_nt.*/windows/')-$(uname -m | sed 's/x86_64/amd64/g')")
-export BINARY_FILE=hyperledger-fabric-${ARCH}-1.2.0.tar.gz
-export BINARY_URL=https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/${ARCH}-1.2.0/${BINARY_FILE}
+export BINARY_FILE=hyperledger-fabric-${ARCH}-1.4.0.tar.gz
+export BINARY_URL=https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/${ARCH}-1.4.0/${BINARY_FILE}
 
 mkdir tmp
 
